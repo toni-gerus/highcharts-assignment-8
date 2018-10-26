@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Literacy around the world </title>
+
+  <link rel="stylesheet" href="styles/new.css">
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+
+<script src="https://code.highcharts.com/themes/sunset.js"></script>
+
+</head>
+
+<body>
+<h1> Literacy among youth around the world </h1>
+<div id= "text">
+<h2> by Toni Gerus </h2>
+  <!-- the 'container' DIV must be EMPTY -->
+  <div id="container1"></div>
+  <p>Source: <a href="https://data.unicef.org/wp-content/uploads/2016/05/education_table-youth-and-adult-literacy-rate-updated-oct.-2015.xlsx">UNICEF</a></p>
+
+<p> Literacy rates among youth and adults are the test of an educational system and are directly connected to poverty level around the world. The illiteracy level among females is way higher than between males. In the most recent years for which data are available, young women accounted for 59 per cent of the total illiterate youth population. In order to change the way the world values girls and to ensure girls everywhere can be full and equal participants in society. An educated girl is more likely to stay healthy, save money, build a business, have fewer and healthier children, innovate community solutions and educate her sons and daughters equally. Yet, millions of girls face barriers that prevent them from attending school that boys do not.  Globally, the youth literacy rate increased from 83 per cent to 91 per cent over two decades, while the number of illiterate youth declined from 170 million to 115 million. Literacy is lowest in least developed countries and higher among males than females. </p>
+
+
+  <div id="container2"></div>
+  <p>Source: <a href="https://data.unicef.org/wp-content/uploads/2016/05/education_table-youth-and-adult-literacy-rate-updated-oct.-2015.xlsx">UNICEF</a></p>
+
+</div>
+
+<script>
+Highcharts.chart('container1', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Adult literacy rate by sex'
+    },
+    subtitle: {
+        text: 'Source: data.unicef.org'
+    },
+    yAxis: {
+        title: {
+            text: 'Percentage of people aged 15 to 24 years who can both read and write'
+        }
+    },
+    xAxis: {
+        categories: ['Afghanistan', 'Benin', 'Chad', 'Ethiopia', 'Mali', 'Pakistan']
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Male',
+        data: [45, 41, 47, 49, 43, 69]
+    }, {
+        name: 'Female',
+        data: [18, 18, 29, 29, 20, 41]
+
+    }]
+});
+</script>
+
+<script>
+Highcharts.chart('container2', {
+
+    title: {
+        text: 'Youth illiteracy 1986-2016'
+    },
+
+    subtitle: {
+        text: 'Source: data.unicef.org'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Number of illiteral youth (millions)'
+        }
+    },
+
+    xAxis: {
+   		 categories: ['1986', '1996', '2006', '2016']
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1986,
+            pointInterval: 10
+        }
+    },
+
+    series: [{
+        name: 'Female',
+        data: [107, 97, 81, 57]
+    }, {
+        name: 'Male',
+        data: [68, 62, 51, 44]
+
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+});
+
+</script>
+
+  <!-- DO NOT write anything below these required tags /18 -->
+</body>
+</html>

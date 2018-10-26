@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="styles/normalize.min.css">
   <link rel="stylesheet" href="styles/main.css">
 
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <script src="https://code.highcharts.com/themes/skies.js"></script>
+
+
   <!-- add the Highcharts script elements here -->
 
 </head>
@@ -15,8 +20,35 @@
 
   <h1>My first chart with Highcharts</h1>
 
-  <!-- add the div and the chart code BELOW this comment -->
+  <div id="container"></div>
 
+  <!-- add the div and the chart code BELOW this comment -->
+  <script>
+  Highcharts.chart('container', {
+          chart: {
+              type: 'bar'
+          },
+          title: {
+              text: 'Fruit Consumption'
+          },
+          xAxis: {
+              categories: ['Pinapple', 'Apples', 'Bananas', 'Oranges']
+          },
+          yAxis: {
+              title: {
+                  text: 'Fruit eaten'
+              }
+          },
+          series: [{
+              name: 'Tom',
+              data: [6, 1, 0, 4]
+          }, {
+              name: 'Jerry',
+              data: [6, 5, 7, 3]
+          }]
+
+  });
+</script>
   <!-- the 'container' DIV must be EMPTY -->
 
 
